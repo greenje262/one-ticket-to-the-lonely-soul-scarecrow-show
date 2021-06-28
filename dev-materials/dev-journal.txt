@@ -1,0 +1,78 @@
+UNTITLED PROJECT 5/21/2021 DEV JOURNAL
+
+5/25/2021
+    Growing up, I didn't play Myst or The Manhole all that much, but I suspect they were quite formative for a variety of reasons. A few months ago, I got it in my head that I wanted to make a game like this, a semi-inhabited space in which you are transient. You will come and you will go, and the world will not be much changed for your being there. I eventually landed on the idea of a corn maze, populated with characters and other environmental props.
+
+    I designed the maze so that there were no dead ends, just redundant loops. I originally wanted to have an underground section, but decided to scrap it for simplicity's sake. Once that was finished, I used a dirt texture and a low-poly plant model from opengameart and built the maze in Godot.
+
+    At first, I wanted the player to move freely, but after some deliberation, I decided to use a node system to travel instead. This was partly to bring it more in line with Cyan's early point-and-click games, but also driven by the desire to have this game be accessible to the blind. It also helps if people want to try and make maps of where they've been.
+
+    I can't remember how I landed on scarecrows to be the characters in the game, but I immediately latched on to it, realizing that I could express a lot of character very creatively with their design. That's what I spent yesterday doing and will likely do so again today.
+
+
+5/26/2021
+    It occurred to me last night that the game is a complete mess stylistically. The cornstalks are low-poly 3D models, the ground is a pixelated dirt texture, and I wanted to make the scarecrow characters billboarded 2D images that I hand-draw. This mismatch of aesthetics is not bad inherently, but is better left to those more capable than I. To rectify the situation, I decided to draw everything in 2D, which should work fine with the movement scheme I've dreamed up. It will also allow me to animate the cornstalks, something I wanted to do with the 3D models, but wasn't quite sure how to accomplish.
+
+    All this to say that I spent the better part of the morning drawing various sizes of stone to make up the texture for the ground. While I was going at it, I reflected on how work was perceived at my old job. Sometimes, whether I did a good job or not, I would be chided for not doing it more efficiently. There was such a strong emphasis on automation and productivity that even doing a good job wasn't good enough sometimes. Spending the time and drawing each pebble out by hand was far more rewarding and reliable than trying to automate it.
+
+5/31/2021
+    Done a lot of good work - feels like this game is way older than ten days already. The movement system is in place, the directional pings have been implemented, a lot of the character art is done, and things are coming together!
+
+    As quickly as a lot of this work has gone, there is still a lot of work left to do, and I'm not sure how a lot of it is going to work. There are issues with the look mechanic, sprites aren't showing up the way I'd like them to, and I somehow have to voice all of the characters.
+
+    At the end of the day, though, I'm thinking this could actually be a commercial release, which is exciting to think about, especially for a game that is still quite young.
+
+6/16/2021
+    Been a little while. I took a step back shortly after this update - I had some good ideas about what Numeromancer 2 could look like, so I wanted to dig in a little on those.
+
+    I've been back at the project more or less at 100% for the past week or so - I've decided to release this game commercially, hopefully on the one-year anniversary of my first published game (Numeromancer). This gives me...three months from tomorrow to finish.
+
+    There's still a lot left to do, but the scoping is solid, and the work just needs to get done. Here's an exhaustive, if not high-level list of things that need to be done:
+
+    - Scarecrow models need to be built, captured, and added to the game: I've decided to build the scarecrows using real materials. This will help me get the look I want without having to learn 3D modeling or relying on my art, which, while not bad, does not fit the game's aesthetic
+
+    - The script needs to be written: I only just today thought of what kind of stories I want these scarecrows to tell. I want them to wistfully recount details of the world outside the corn maze that the player character has told them over the many times that they have been through the maze. As they speak, it'd be fun to play video behind them - primarily the incoherent milieu of what is being described
+
+    - The dialogue system needs to be built and implemented: I have a very passable dialogue system that I can salvage from Bread, Milk, Eggs. I'm thinking about taking it a step further in this game by instancing each line rather than confining it to a text box. Hopefully this will give me the flexibility to add some kinetics to the dialogue, while also being able to confine it to a text box for accessibility or time constraints.
+
+    - The world needs to be filled out: Right now, the world outside the maze is an endless void. Even if it means putting down a few more floor tiles, the world should be a little...more. I'm also thinking about thickening up the cornstalks a bit, or adding another ring around the outside. Oh! And I'd like the cornstalks to be animated.
+
+    - Finish sound design: I need to add footstep sounds, voice lines, a softly blowing wind, and perhaps even sparse music. The voice lines need quite a bit of post-production work to sound distinct, especially if it'll only be one or two people doing the voices.
+
+    - Add options sequence: The game's accessibility is important to me, and if that isn't done correctly, there's no point making the game. What I'd like to do at the start is provide the player with an options screen before beginning the game. This screen will take the form of an in-universe questionnaire. This will let the player turn a number of the features on or off, rebind their keys, as well as give them a quick rundown of the controls.
+
+    - Begin and end the game: Right now, the game has no start or end sequence. I like a separate, simple title screen that fades in and out when moving between the two scenes. Easy.
+
+    - Add achievements or unlockables: Talking to a scarecrow unlocks the design art, entries in this journal, so on and so forth. This requires extra work that is not primary to the game's objective, and should only be undertaken with an absolute abundance of time before release.
+
+    Okay, I'll admit, this is a lot, especially considering that I also need to market this game from nothing and release it WHILE I'M OUT OF TOWN, GETTING READY TO GO ON A WEEKLONG CAMPING TRIP WITH MY DAD. Just release it later, Jeff, I'm sure it'll be fine, I can hear you say. Nope. Not gonna do it.
+
+    First of all, because my audience is so small, I doubt very many people will play it in the first week anyway. Secondly, since the game itself is so small and contained, I find it unlikely that there will be any bugs so seriously game-breaking that they can't wait a week or two for me to get to. Third, if Annamarie is really willing to help me, she may be able to help act as a presence on social media while I'm away, though she'll have her own respinsibilities.
+
+    That whole paragraph reads as famous last words. Oh well, fingers crossed.
+
+    I just remembered the other important task that needs doing: the game needs a name, and I am blanking SO hard. Hopefully something will come to me.
+
+6/20/2021
+    Back-to-back shareholder meetings with Annamarie and my parents the last couple days have been a little deflating. I can tell my insecurities are getting in the way of how I should be poised in those conversations. They don't really understand the industry or how my work fits into it, and while I'm not necessarily an expert, I know more than enough to be able to inform them and answer their questions from a place of confidence. Instead, I flounder for arguments that will legitimize my work in their eyes, and that's why I fail. I'm not quite sure how to circumvent this reaction - maybe therapy would help.
+
+    Anyway, it's a new week working on the game, and I can tell I'm already coming up on a sticking point, where there is no low-hanging fruit to grab, and the work just needs to be done. I've come up with quite a few tasks to complete, which should help focus my efforts and push through that block.
+
+    Something that I haven't thought much about that I know is going to take more time than I expect is reaching out to deaf and blind communities or consultants to get feedback on my game's accessibility. I want to have a fully-featured vertical slice of the game available, with at least an outline of all the options I plan on including.
+
+    I'll be gone most of next week on the Four-Pass Loop, so it might be a good time to reach out to people. If I have a rough draft of the script done by then, it'll also serve as good time away from that as well.
+
+    Last week, I struck an okay balance with work and other responsibilities, but only managed 18 hours of work. I talked to Annamarie about setting clearer boundaries, and she agreed that it was a good idea. Guess I'll finally check out the library this week.
+
+    Still feeling good about the timeline. I'm almost positive I can get everything done before the proposed release date. Feeling good!
+
+    Oh, and one more thing, just to write down before I forget: I should find a container or something I can use to collect materials while out on the Four Pass Loop. I'll bet there'll be some good scrow-building stuff out there.
+
+6/23/2021
+    I had a couple good days this week, but progress has again been slow as I work through some personal issues. I really want to be able to get a full week of work in, so I'll have to be extra diligent over the next few days, especially with the backpacking trip coming up.
+
+    Although there was no reportable work that got done, I had a good amount of time to think, and I came to a couple important realizations. The first was settling a distribution method, which I'll adopt across all my games from here on out. All my games will be on itch, and will cost money. They will also be available, free to play, on my website on a rotating schedule. This way, if people want to own the game, they can buy it, but if they just want to play it, they can wait for it to be available on the website. I think this is a fair compromise, and means I'll never have to make a demo for a game, which is great.
+
+    The second important thought was a bit of a pie-in-the-sky dream for the game. Adding a metanarrative layer over the game could be an impactful and interesting decision, really adding some meat to the bones that I'm working with right now. It would involve adding my voice as an increasingly antagonistic and desperate narrator, wresting control from the player periodically to make them experience the game 'the way I intended'. Though I'm quite fond of this idea, it would be difficult to execute within my timeline, and would have to be designed carefully to remain accessible. Additionally, as I sit here and think about this idea, I think portraying the desperation of an independent creator by antagonizing the player is not the best idea, as player-developer relationships can be strained in the first place. I'll have to think about this more.
+
+    Of my eight objectives for this week, I've accomplished two. It's time to get to work.

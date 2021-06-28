@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scream01.mp3" type="AudioStream" id=1]
+
+[node name="Scream" type="AudioStreamPlayer3D"]
+stream = ExtResource( 1 )
+unit_db = 1.0
+unit_size = 4.0
+autoplay = true
+max_distance = 3.0
