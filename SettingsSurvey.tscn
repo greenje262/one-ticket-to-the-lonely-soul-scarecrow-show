@@ -1,0 +1,334 @@
+[gd_scene format=2]
+
+[node name="SettingsSurvey" type="Control"]
+margin_right = 464.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paper" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 464.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PRE-MAZE SURVEY"
+align = 1
+valign = 1
+
+[node name="SettingsBox" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -207.0
+margin_top = -550.0
+margin_right = 208.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting1" type="Control" parent="SettingsBox"]
+margin_right = 415.0
+margin_bottom = 50.0
+
+[node name="Label" type="Label" parent="SettingsBox/Setting1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "OVERALL VOLUME"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="SettingsBox/Setting1"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -25.0
+margin_bottom = 25.0
+tick_count = 11
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting6" type="Control" parent="SettingsBox"]
+margin_top = 50.0
+margin_right = 415.0
+margin_bottom = 100.0
+
+[node name="Label" type="Label" parent="SettingsBox/Setting6"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "DIALOGUE VOLUME"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="SettingsBox/Setting6"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -25.0
+margin_bottom = 25.0
+tick_count = 11
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting7" type="Control" parent="SettingsBox"]
+margin_top = 100.0
+margin_right = 415.0
+margin_bottom = 150.0
+
+[node name="Label" type="Label" parent="SettingsBox/Setting7"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "MUSIC VOLUME"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="SettingsBox/Setting7"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -25.0
+margin_bottom = 25.0
+tick_count = 11
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting8" type="Control" parent="SettingsBox"]
+margin_top = 150.0
+margin_right = 415.0
+margin_bottom = 200.0
+
+[node name="Label" type="Label" parent="SettingsBox/Setting8"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SFX VOLUME"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="SettingsBox/Setting8"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -25.0
+margin_bottom = 25.0
+tick_count = 11
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting2" type="Control" parent="SettingsBox"]
+margin_top = 200.0
+margin_right = 415.0
+margin_bottom = 250.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SettingsBox/Setting2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PING THING"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="SettingsBox/Setting2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -25.0
+margin_bottom = 25.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting3" type="Control" parent="SettingsBox"]
+margin_top = 250.0
+margin_right = 415.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SettingsBox/Setting3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SUBTITLES"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="SettingsBox/Setting3"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -25.0
+margin_bottom = 25.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting4" type="Control" parent="SettingsBox"]
+margin_top = 300.0
+margin_right = 415.0
+margin_bottom = 350.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SettingsBox/Setting4"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "DYNAMIC SUBTITLE TEXT"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="SettingsBox/Setting4"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -25.0
+margin_bottom = 25.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting5" type="Control" parent="SettingsBox"]
+margin_top = 350.0
+margin_right = 415.0
+margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SettingsBox/Setting5"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BACKGROUND VIDEO"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="SettingsBox/Setting5"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -25.0
+margin_bottom = 25.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting9" type="Control" parent="SettingsBox"]
+margin_top = 400.0
+margin_right = 415.0
+margin_bottom = 525.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SettingsBox/Setting9"]
+margin_right = 100.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "REBIND KEYS"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RebindBox" type="Control" parent="SettingsBox/Setting9"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -315.0
+margin_bottom = 125.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

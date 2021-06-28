@@ -1,9 +1,11 @@
 extends Spatial
 
+onready var cam = $Camera
 onready var tween = $MoveTween
 onready var tween2 = $OtherTween
 onready var pinger = $PingPlayer
 onready var ray = $RayCast
+onready var survey = $SettingsPage
 
 onready var ind_u = $UIndicator
 onready var ind_l = $LIndicator
@@ -23,6 +25,7 @@ var stored_rot
 var look_rot
 var looking = false
 var in_room = false
+var survey_time = false
 var node_match
 var ind_empty = preload("res://indicator-empty.png")
 var ind_full = preload("res://indicator-full.png")
@@ -40,9 +43,13 @@ func _physics_process(delta):
 			tween.start()
 			tween2.interpolate_property(title, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3.5, Tween.TRANS_EXPO)
 			tween2.start()
-	elif state == "settings" && !tween.is_active():
-		yield(get_tree().create_timer(2), "timeout")
-		pass
+	elif state == "settings" && !survey_time:
+		survey_time = true
+		yield(get_tree().create_timer(1), "timeout")
+		tween.interpolate_property(cam, "rotation_degrees", rotation_degrees, Vector3(-30, 0, 0), 0.5)
+		tween.start()
+		tween2.interpolate_property(survey, "translation", Vector3(2, 0.8, -0.4), Vector3(0, 0.8, -0.4), 1.5, Tween.EASE_OUT)
+		tween2.start()
 	elif state == "game":
 		if !tween.is_active():
 			if !looking:
