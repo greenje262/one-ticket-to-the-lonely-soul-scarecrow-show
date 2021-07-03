@@ -2,6 +2,7 @@ extends Spatial
 
 onready var player = $Player
 onready var weather = $Atmosphere
+onready var fog = $Fog
 onready var weather_tween = $Atmosphere/Tween
 onready var node001 = $Nodes/Node01
 onready var node002 = $Nodes/Node02
@@ -124,6 +125,8 @@ onready var node118 = $Nodes/Node118
 onready var node119 = $Nodes/Node119
 onready var node120 = $Nodes/Node120
 onready var node121 = $Nodes/Node121
+
+signal the_end
 
 func _ready():
 	player.connect("node_update", self, "check_node")
@@ -977,8 +980,9 @@ func check_node():
 				"E": null, "speedE": 0
 				}
 		node121.translation:
+			emit_signal("the_end")
 			player.node_match = {
-				"N": node117.translation, "speedN": 1.5,
+				"N": null, "speedN": 0,
 				"W": null, "speedW": 0,
 				"S": null, "speedS": 0,
 				"E": null, "speedE": 0

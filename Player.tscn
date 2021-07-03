@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://indicator-empty.png" type="Texture" id=2]
 [ext_resource path="res://ping.mp3" type="AudioStream" id=3]
 [ext_resource path="res://ARCO for OSX.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://No Virus.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://Fog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SettingsSurvey.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
@@ -28,13 +27,13 @@ font_data = ExtResource( 5 )
 [sub_resource type="QuadMesh" id=4]
 size = Vector2( 0.464, 0.6 )
 
-[sub_resource type="ViewportTexture" id=6]
+[sub_resource type="ViewportTexture" id=5]
 viewport_path = NodePath("SettingsPage/ViewportContainer/Viewport")
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=6]
 resource_local_to_scene = true
 flags_unshaded = true
-albedo_texture = SubResource( 6 )
+albedo_texture = SubResource( 5 )
 
 [node name="Player" type="Spatial"]
 script = ExtResource( 1 )
@@ -46,6 +45,8 @@ cull_mask = 524287
 [node name="MoveTween" type="Tween" parent="."]
 
 [node name="OtherTween" type="Tween" parent="."]
+
+[node name="OtherOtherTween" type="Tween" parent="."]
 
 [node name="UIndicator" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -171,16 +172,66 @@ text = "Quit (Quitbutton)"
 align = 1
 valign = 1
 
+[node name="EndBox" type="Control" parent="WordBox"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 100.0
+margin_right = 1024.0
+margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="WordBox/EndBox"]
+margin_top = -100.0
+margin_right = 1024.0
+margin_bottom = 500.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="WordBox/EndBox"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -350.0
+margin_right = 350.0
+margin_bottom = 161.0
+custom_fonts/font = SubResource( 3 )
+text = "THE EMD"
+align = 1
+valign = 1
+
+[node name="Play" type="Label" parent="WordBox/EndBox"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 512.0
+text = "PlayAgain (Playbutton)"
+align = 1
+valign = 1
+
+[node name="Quit" type="Label" parent="WordBox/EndBox"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -100.0
+text = "Quit (Quitbutton)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
 
-[node name="Fog" parent="." instance=ExtResource( 6 )]
-
 [node name="SettingsPage" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 3, 0.8, -0.4 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="SettingsPage"]
 light_mask = 524288

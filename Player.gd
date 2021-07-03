@@ -3,9 +3,11 @@ extends Spatial
 onready var cam = $Camera
 onready var tween = $MoveTween
 onready var tween2 = $OtherTween
+onready var tween3 = $OtherOtherTween
 onready var pinger = $PingPlayer
 onready var ray = $RayCast
 onready var survey = $SettingsPage
+onready var survey_page = $SettingsPage/ViewportContainer/Viewport/SettingsSurvey
 
 onready var ind_u = $UIndicator
 onready var ind_l = $LIndicator
@@ -16,6 +18,7 @@ onready var yesser = $WordBox/YesNoBox/Yes
 onready var noer = $WordBox/YesNoBox/No
 
 onready var title = $WordBox/TitleBox
+onready var end = $WordBox/EndBox
 
 var state = "title"
 var counter = 1001
@@ -35,14 +38,22 @@ signal game_start
 
 func _ready():
 	stored_rot = rotation_degrees
+	get_node("/root/Cornfield").connect("the_end", self, "endgame")
+	survey_page.connect("game_time", self, "settings_done")
 
 func _physics_process(delta):
-	if state == "title" && !tween.is_active():
-		if Input.is_action_just_pressed("ping"):
-			tween.interpolate_property(self, "translation", translation, Vector3(0, 0, 17), 2, Tween.EASE_OUT)
-			tween.start()
-			tween2.interpolate_property(title, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3.5, Tween.TRANS_EXPO)
-			tween2.start()
+	#the 'play again' process is wrong somehow, that needs to be fixed
+	if state == "title" || state == "end":
+		if !tween.is_active():
+			if Input.is_action_just_pressed("ping"):
+				tween.interpolate_property(self, "translation", Vector3(0, 10, 17), Vector3(0, 0, 17), 2, Tween.EASE_OUT)
+				tween.start()
+				if state == "title":
+					tween2.interpolate_property(title, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3.5, Tween.TRANS_EXPO)
+					tween2.start()
+				elif state == "end":
+					tween2.interpolate_property(end, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3.5, Tween.TRANS_EXPO)
+					tween2.start()
 	elif state == "settings" && !survey_time:
 		survey_time = true
 		yield(get_tree().create_timer(1), "timeout")
@@ -50,6 +61,8 @@ func _physics_process(delta):
 		tween.start()
 		tween2.interpolate_property(survey, "translation", Vector3(2, 0.8, -0.4), Vector3(0, 0.8, -0.4), 1.5, Tween.EASE_OUT)
 		tween2.start()
+		yield(tween2, "tween_all_completed")
+		$SettingsPage/ViewportContainer/Viewport/SettingsSurvey/SettingsBox/Setting1/HSlider.grab_focus()
 	elif state == "game":
 		if !tween.is_active():
 			if !looking:
@@ -112,6 +125,16 @@ func _physics_process(delta):
 	elif !Dialogue.choice:
 		yesser.hide()
 		noer.hide()
+
+#put away settings page and begin the game
+func settings_done():
+	tween.interpolate_property(cam, "rotation_degrees", Vector3(-30, 0, 0), Vector3(0, 0, 0), 1)
+	tween.start()
+	tween2.interpolate_property(survey, "translation", Vector3(0, 0.8, -0.4), Vector3(2, 0.8, -0.4), 1, Tween.EASE_OUT)
+	tween2.start()
+	yield(tween2, "tween_all_completed")
+	survey.hide()
+	state = "game"
 
 #update look direction after every input
 func look_tweak(looker):
@@ -253,3 +276,14 @@ func _on_MoveTween_tween_all_completed():
 		
 		if Dialogue.talking && !in_room:
 			Dialogue.dialogue_end()
+
+#play ending sequence
+func endgame():
+	state = "end"
+	tween.interpolate_property(self, "rotation_degrees", rotation_degrees, Vector3(40, 0, 0), 3, Tween.TRANS_LINEAR)
+	tween.start()
+	yield(tween, "tween_all_completed")
+	tween2.interpolate_property(self, "translation", Vector3(-2, 0, 17), Vector3(-2, 10, 23), 3.5, Tween.EASE_IN)
+	tween2.start()
+	tween3.interpolate_property(end, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 3, Tween.TRANS_EXPO)
+	tween3.start()
