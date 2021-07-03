@@ -1,0 +1,153 @@
+GAME SCRIPT FOR THE SHIT THE CHARACTERS SAY
+they're all scarecrows, they're all wistful for the things they cannot do, they all know the player character, who has been to visit them repeatedly
+
+[[TITLE IDEAS]]
+    One Ticket to the Lonely Soul Scarecrow Show
+
+[[RANTS, GENERALLY SPEAKING]]
+    the maze is not a good place for the scarecrows to be, and I want this to be communicated as implicitly as possible
+    the priority here is to convey a feeling for the space, not to make a carefully-directed critique of society (though that will probably happen naturally)
+
+    1. (v) what hope is there in struggling against an overwhelming power?
+        the deck is stacked against us, and the rules change as soon as they can be construed to help us
+        this isn't a storybook or fairytale
+        we have no path forward, we have no idea what to do
+    2. (v) what's the difference between being rooted and being trapped?
+        they say we have free will, but it's not like we can get down off of these wooden poles
+        they say we have everything we need, and that there's nothing for us out there, so what's the harm in letting us go look?
+    3. (^) there's nothing better than sharing a meal with friends and family
+        it can be a crucial break from the fast-paced modern world
+    4. (^) are we only meant to do the things we're good at?
+        why should we seek to optimize our qualities?
+        people should have autonomy to do what interests them
+        there's nothing wrong with doing what you're good at either
+        the pressure to optimize is artificial and dehumanizing
+    5. (^) what happens to us after we're no longer here?
+        it's scary
+        even if someone is no longer here, they're only truly gone after they've been forgotten
+        this doesn't keep loss from hurting, it only makes it more bearable
+    6. (v) manipulative breakdown - 'you're being selfish for not depending on me'
+    7. (v) why didn't my hard work pay off in the end? what was the point?
+    8. (^) know any good jokes?
+        things may not always be good, but we've always got each other
+        spreading joy is the best way to make the most of a bad situation
+    9. (<>) self insert
+    10. (v) do you even know what they do to us here?
+
+IN NO PARTICULAR ORDER!
+[[SCARECROW 1]]
+    jovial, hospitable, welcoming, passive-aggressive
+    [1] (bright, cheerful) Hello! Welcome back.
+    [2] I hope you enjoy your time with us.
+    [3] Please let me know if you need anything.
+    [4] I would be happy to assist you.
+    [5] (conspiratorially) By the way, did you happen to bring what I asked for?
+    [6] (yes) (overjoyed) Oh, marvelous, thank you, thank you! This will keep those pesky bugs off my face. No respite from them out here, I'm afraid. Well, enjoy your journey!
+    [7] (no - RANT) (resigned) Ah. Well, not to worry. I understand you have your own responsibilities (video fades in background), and may not necessarily have the time for a simple scarecrow such as myself. Certainly no one would think twice about prioritizing the needs of flesh and blood humans over that of a scarecrow. (bla bla bla...guilt trip stuff...the camera slowly zooms on the video and the scarecrow, fading out everything else...until it suddenly snaps back into place) But goodness, how I do prattle on. Please, enjoy the rest of your journey. And remember: (sickly sweet) we are at your service.
+[[SCARECROW 2]]
+    lonely, uncertain, eeyore, kind
+    [1] (dully) Oh, hello there. Thanks for coming to see me.
+    [2] I know I'm not the one you're here to see, but it's nice that you dropped by all the same.
+    [3] It's been kind of quiet lately, not many people come through these days.
+    [4] I've kind of come to expect it, though.
+    [5] We were made to scare things away, after all.
+    [6] . . .
+    [7] Do you think that we have an obligation to do the things we're good at?
+    [8] (yes) Oh...sure, I guess that just makes sense. Uh, thank you for chatting with me.
+    [9] (no - RANT)
+[[SCARECROW 3]]
+    sleepy, hungry, satisfied, gluttonous
+    (crows perched, picking at the scrow)
+    [1] (lazily) I...thought I heard someone...mmm...thrashing about out there.
+    [2] I didn't...mmm...realize...that it was you. It has been...quite some time.
+    [3] You look as...delicious as ever.
+    [4] Tell me, are you...[grunts]...eating well?
+    [5] (yes - RANT)
+    [6] (no) Oh, oh...hmm...well, that is...too bad. I hope for more...delectable feasts in your future.
+[[SCARECROW 4]]
+    grandstanding, magnanimous, self-absorbed, out of touch
+    [1] Hellllo! How wonderful it is to see your shining face once again.
+    [2] How long has it been? I am shocked that you could stay parted from me for so long! [hearty laugh]
+    [3] No need to be shy! You are more than welcome to stay and bask in my radiant glow for as long as you like.
+    [4] After all, I don't maintain this brilliant visage simply for my health! [hearty laugh]
+    [5] (uncharacteristically tender) You...will stay a while, won't you?
+    [6] (yes - RANT)
+    [7] (no) Oh ho! As a matter of fact, I just remembered I have a pressing appointment I simply cannot miss. Though it stings my heart, we will have to have our tête-à-tête another time! Ta ta for now!
+[[SCARECROW 5]]
+    concerned, well-intentioned, manipulative, controlling
+    [1] Hey! Are you feeling better?
+    [2] I was thinking more about what we talked about last time.
+    [3] I think you're just overthinking things.
+    [4] Either way, I'm glad you came to me.
+    [5] The other residents are a little...well, you know.
+    [6] They don't know you like I do.
+    [7] So, do you need more help?
+    [8] (yes) Oh, dear, dear, of course. I will listen for as long as you need.
+    [9] (no - RANT)
+[[SCARECROW 6]]
+    mischievous, generous, good-natured, carefree
+    [1] Oh, just the person I was hoping to see today!
+    [2] Just yesterday, I came up with a real gut-buster.
+    [3] Okay, here we go: why don't scarecrows need to eat?
+    [4] . . .
+    [5] Because we're already stuffed! Ha ha ha!
+    [6] What about you? Got a good joke for me?
+    [7] (yes - RANT)
+    [8] (no) Ah, no problem! It's hard to be as naturally funny as I am, after all, ha ha ha! Good to see you, have fun out there!
+[[SCARECROW 7]]
+    me
+    [1] Hey! It's me, Jeff, the developer.
+    [2] You're moving through the maze pretty well.
+    [3] You'll probably be finished before long.
+    [4] Anyway, just wanted to check in and say thanks for playing.
+    [5] I'm a small-time game dev, so it means a lot that you took the time to play.
+    [6] What do you think? Are you having fun so far?
+    [7] (yes) Oh, great! I wasn't sure anyone besides me was going to like this game by the time it was finished. That means more than I can tell you, thank you. Enjoy the rest of the game!
+    [8] (no) Ah, I'm sorry to hear it. If you want to duck out early, you can press the [quit keybind] key to quit. Otherwise, I hope it gets better from here.
+[[SCARECROW 8]]
+    austere, no-nonsense, supportive, indecisive
+    [1] (brusquely) Welcome!
+    [2] You're doing an adequate job traversing the maze.
+    [3] No need to stop and chat with me.
+    [4] Though...rest and hydration are both important as well.
+    [5] So also feel free to take a break now and then!
+    [6] (sheepishly) Uh...sorry. I'm still new at this.
+    [7] It can be tough learning the ropes, don't you think?
+    [8] (yes) Yes, you get it! Thanks for your support. Keep up the good work!
+    [9] (no - RANT)
+[[SCARECROW 9]]
+    despondent, heartbroken, hopeful, desperate
+    (dug up earth next to the scrow)
+    [1] (angrily) Hey y- (disappointed) Oh. It's just you.
+    [2] Ah, sorry, I don't mean it like that, it's just that, well...
+    [3] I mean, you can see...they dug up Nell and took them away.
+    [4] I just really miss them. (sniffs)
+    [5] I know that's just how things go out here sometimes, but I can't help it.
+    [6] Nell really was one-of-a-kind.
+    [7] Do you think I'll see them again?
+    [8] (yes - RANT)
+    [9] (no) Right...well, all I can do is look to the future and hope for the best. Thanks for hearing me out.
+[[SCARECROW 10]]
+    inviting, teasing, irresponsible, fun-loving
+    [1] Whoa, look who it is!
+    [2] Great to see you - too bad the weather isn't better, huh?
+    [3] Maybe we can do something about that... (sun moves to set behind)
+    [4] There we go, that's much better. (giggle)
+    [5] You're pretty close to the end now, but I'm glad you stopped to see me first.
+    [6] How are you? Is everything okay?
+    [7] (yes - RANT)
+    [8] (no - RANT)
+
+[[BARKS]]
+    "I think I'm still somewhere near the entrance..."
+    "I'm near the eastern wall right now"
+    "I think I'm close to the northern edge of the maze"
+    "This is the western wall, I think"
+    "Looks like I'm getting to close to the exit now"
+    "I'm near the center of the maze at this point"
+    (specific barks for each scarecrow, letting the player know they're in the room or nearby, and whether the dialogue has been exhausted or not)
+
+[[STOCK VIDEO RESOURCES]]
+    Pexels - https://www.pexels.com/videos
+    Pixabay - https://pixabay.com/videos/
+    You could probably also use images from Smithsonian Open Access with a bit of editing
