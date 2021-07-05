@@ -85,3 +85,18 @@ UNTITLED PROJECT 5/21/2021 DEV JOURNAL
     Maybe I'll close the game loop today or tomorrow as well. All that really needs doing is moving from the settings state to the game state, then from the game state to the end state, along with a screen transition. I could half-ass this, but what I really want is for the settings screen to be interactable as well.
 
     Sorry this isn't more coherent - my scalp is leaking in multiple places and I needed to actually write out what I wanted to do to make it even a little coherent. Work time.
+
+7/5/2021
+    One of the biggest things that's been weighing on me recently is the game narrative script. I've got the mechanism down pretty well - it's just one-sided conversation with a simple yes/no at the end, leaving two different choices for each scrow, with one becoming a nearly cinematic rant. The problem has been trying to nail a tone for the game.
+
+    Originally, I was just going to make the scrows talk about whatever was on their (read: my) mind, including everything from having dinner with friends and family to how responsible one should feel over doing favors for their friends. I liked how disparate things were, but I couldn't get any of the words I wrote to resonate, and I think the issue was that I wasn't a big fan of the ideas themselves.
+
+    As a sort of natural progression from that idea, I thought perhaps that I wanted to "say something"; that is, have the scrows all say thigns along the same big idea, and intentionally drive home a thesis. This didn't last long at all, because I think that kind of thing is best left to people who take themselves too seriously. I shouldn't have to preach to my audience to expose them to new ideas.
+
+    Finally, I think I've landed somewhere in the middle, or perhaps outside of the structural binary entirely. I've dug a little deeper into the space that the player finds themselves in, to give it a little more depth than 'foggy corn maze'. I didn't have to go that far, honestly: where I'm at now is more like 'foggy corn maze that has a clear class structure that puts scrows at a disadvantage'.
+
+    So, by spending some time imagining that world, maybe twenty or thirty minutes, I was able to come up with plenty of things that would concern the scrows. Especially in the maze, they're uncomfortable, they're ornery, and even a little desperate. Additionally, the player is unusual in the sense that nobody can hear the scrows except for them. From this foundation, it becomes a lot easier to dream up motivations, frustrations, and personalities.
+
+    To be fair, these ideas are not serendipitous inspirations from nowhere. They are absolutely related to the systemic oppression experienced by minority populations in the United States. If I'm going this route, I may have to send the script past a sensitivity reader, because the last thing I want is to trivialize or misrepresent a point of view by refocusing it through a lens of privilege. I can't fucking stand that shit.
+
+    Anyway, kind of a long entry today, but I'm excited that I finally got to a point where I'm feeling a little more content with the "narrative" tone. It's not quite pointless, and it's not quite a thesis. It's just a space that has its own baggage for the player to sift through for an hour or two. I hope I pull it off okay.
