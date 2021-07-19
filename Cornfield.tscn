@@ -48,6 +48,7 @@ dof_blur_far_amount = 0.7
 extents = Vector3( 1.5, 2, 1.5 )
 
 [node name="Cornfield" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.956661, -5.73605, 14.1334 )
 script = ExtResource( 3 )
 
 [node name="Atmosphere" type="WorldEnvironment" parent="."]

@@ -100,3 +100,14 @@ UNTITLED PROJECT 5/21/2021 DEV JOURNAL
     To be fair, these ideas are not serendipitous inspirations from nowhere. They are absolutely related to the systemic oppression experienced by minority populations in the United States. If I'm going this route, I may have to send the script past a sensitivity reader, because the last thing I want is to trivialize or misrepresent a point of view by refocusing it through a lens of privilege. I can't fucking stand that shit.
 
     Anyway, kind of a long entry today, but I'm excited that I finally got to a point where I'm feeling a little more content with the "narrative" tone. It's not quite pointless, and it's not quite a thesis. It's just a space that has its own baggage for the player to sift through for an hour or two. I hope I pull it off okay.
+
+7/18/2021
+    It's been a slow couple of weeks. I was out of town for a little bit, and though I was able to get a little work done, I didn't accomplish as much as I had hoped.
+    
+    At the end of last week, I switched over to Discord as a project manager, replacing domino. Discord has the advantage of being accessible on my phone, and can scale with collaborators a little more easily than domino can. There are still a few oddities that I'm not a fan of, but until I have the time and motivation to build my own project manager framework, it'll do just fine.
+
+    We're less than two months from release now, and I'm starting to get a little vertigo with the amount of work that still needs to be done. Thankfully, I think the script is getting pretty close, after which voice work can begin. I spent a good amount of time looking at settings implementation a couple days ago, and that's coming together nicely as well.
+
+    I think the thing that will cause the biggest holdup is making the cinematics for the rants. I have a lot of great ideas, but there's so much to balance when trying to nail down the tone. I have to make sure the writing, the voice acting, and everything in the cinematic matches the tone I'm trying to portray. It's a lot of pressure, and I'm afraid that I'm going to hate it by the end. Well, whatever. As long as it isn't objectively terrible, I guess I'll be fine with it.
+
+    Games never turn out the way you want them to, I suppose. I'm gonna build some of the scrows this week. Hopefully seeing them in Godot will get my fire going.

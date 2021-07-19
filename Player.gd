@@ -8,6 +8,7 @@ onready var pinger = $PingPlayer
 onready var ray = $RayCast
 onready var survey = $SettingsPage
 onready var survey_page = $SettingsPage/ViewportContainer/Viewport/SettingsSurvey
+onready var volume_setting = $SettingsPage/ViewportContainer/Viewport/SettingsSurvey/SettingsBox/Volume/HSlider
 
 onready var ind_u = $UIndicator
 onready var ind_l = $LIndicator
@@ -41,6 +42,7 @@ func _ready():
 	get_node("/root/Cornfield").connect("the_end", self, "endgame")
 	survey_page.connect("game_time", self, "settings_done")
 
+#handle inputs, adjust settings, find facing direction, handle yes/no options
 func _physics_process(delta):
 	#the 'play again' process is wrong somehow, that needs to be fixed
 	if state == "title" || state == "end":
@@ -55,25 +57,21 @@ func _physics_process(delta):
 					tween2.interpolate_property(end, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3.5, Tween.TRANS_EXPO)
 					tween2.start()
 	elif state == "settings" && !survey_time:
-		survey_time = true
-		yield(get_tree().create_timer(1), "timeout")
-		tween.interpolate_property(cam, "rotation_degrees", rotation_degrees, Vector3(-30, 0, 0), 0.5)
-		tween.start()
-		tween2.interpolate_property(survey, "translation", Vector3(2, 0.8, -0.4), Vector3(0, 0.8, -0.4), 1.5, Tween.EASE_OUT)
-		tween2.start()
-		yield(tween2, "tween_all_completed")
-		$SettingsPage/ViewportContainer/Viewport/SettingsSurvey/SettingsBox/Setting1/HSlider.grab_focus()
+		settings_up()
 	elif state == "game":
 		if !tween.is_active():
 			if !looking:
 				if Input.is_action_just_pressed("move_forward"):
 					advance()
-				if Input.is_action_just_pressed("ping"):
+				if Input.is_action_just_pressed("ping") && GlobalSettings.show_pinger:
 					ping()
 				if Input.is_action_just_pressed("look") && in_room:
 					looking = true
 					tween.interpolate_property(self, "rotation_degrees", rotation_degrees, look_rot, 0.375, Tween.TRANS_LINEAR)
 					tween.start()
+				if Input.is_action_just_pressed("settings"):
+					state = "settings"
+					settings_up()
 			if !Dialogue.choice:
 				if Input.is_action_just_pressed("turn_left"):
 					if !looking:
@@ -125,16 +123,28 @@ func _physics_process(delta):
 	elif !Dialogue.choice:
 		yesser.hide()
 		noer.hide()
+	
+	#settings check
+	if !GlobalSettings.show_pinger:
+		ind_u.hide()
+		ind_l.hide()
+		ind_d.hide()
+		ind_r.hide()
+	elif GlobalSettings.show_pinger:
+		ind_u.show()
+		ind_l.show()
+		ind_d.show()
+		ind_r.show()
 
 #put away settings page and begin the game
 func settings_done():
-	tween.interpolate_property(cam, "rotation_degrees", Vector3(-30, 0, 0), Vector3(0, 0, 0), 1)
-	tween.start()
-	tween2.interpolate_property(survey, "translation", Vector3(0, 0.8, -0.4), Vector3(2, 0.8, -0.4), 1, Tween.EASE_OUT)
-	tween2.start()
-	yield(tween2, "tween_all_completed")
-	survey.hide()
-	state = "game"
+	if state == "settings":
+		tween.interpolate_property(cam, "rotation_degrees", Vector3(-30, 0, 0), Vector3(0, 0, 0), 1)
+		tween.start()
+		tween2.interpolate_property(survey, "translation", Vector3(0, 0.8, -0.4), Vector3(2, 0.8, -0.4), 1, Tween.EASE_OUT)
+		tween2.start()
+		yield(tween2, "tween_all_completed")
+		state = "game"
 
 #update look direction after every input
 func look_tweak(looker):
@@ -276,6 +286,17 @@ func _on_MoveTween_tween_all_completed():
 		
 		if Dialogue.talking && !in_room:
 			Dialogue.dialogue_end()
+
+#bring up the settings page
+func settings_up():
+	survey_time = true
+	volume_setting.grab_focus()
+	yield(get_tree().create_timer(1), "timeout")
+	tween.interpolate_property(cam, "rotation_degrees", rotation_degrees, Vector3(-30, 0, 0), 0.5)
+	tween.start()
+	tween2.interpolate_property(survey, "translation", Vector3(2, 0.8, -0.4), Vector3(0, 0.8, -0.4), 1.5, Tween.EASE_OUT)
+	tween2.start()
+	yield(tween2, "tween_all_completed")
 
 #play ending sequence
 func endgame():

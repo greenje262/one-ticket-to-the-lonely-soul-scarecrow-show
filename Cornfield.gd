@@ -128,10 +128,12 @@ onready var node121 = $Nodes/Node121
 
 signal the_end
 
+#connect to the player, initialize position
 func _ready():
 	player.connect("node_update", self, "check_node")
 	check_node()
 
+#quit the game
 func _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
@@ -987,4 +989,3 @@ func check_node():
 				"S": null, "speedS": 0,
 				"E": null, "speedE": 0
 				}
-		
