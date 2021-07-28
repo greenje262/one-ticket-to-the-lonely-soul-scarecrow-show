@@ -11,14 +11,18 @@ config_version=4
 [application]
 
 config/name="20210521-cornmaze"
-run/main_scene="res://Cornfield.tscn"
+run/main_scene="res://scenes/Cornfield.tscn"
 config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout="res://resources/default_bus_layout.tres"
 
 [autoload]
 
-Dialogue="*res://Dialogue.gd"
-DialogueVault="*res://DialogueVault.gd"
-GlobalSettings="*res://GlobalSettings.gd"
+Dialogue="*res://scripts/Dialogue.gd"
+DialogueVault="*res://scripts/DialogueVault.gd"
+GlobalSettings="*res://scripts/GlobalSettings.gd"
 
 [input]
 
@@ -79,4 +83,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://resources/default_env.tres"

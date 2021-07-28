@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/scream04.mp3-00ad2f8affd9dcfcc89d511b39a03b82.mp3str"
+
+[deps]
+
+source_file="res://audio/screams/scream04.mp3"
+dest_files=[ "res://.import/scream04.mp3-00ad2f8affd9dcfcc89d511b39a03b82.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

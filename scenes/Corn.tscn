@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://graphics/world/plant-edit.gltf" type="PackedScene" id=1]
+[ext_resource path="res://graphics/world/cornstalk2D.png" type="Texture" id=2]
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 2, 4.4 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+flags_albedo_tex_force_srgb = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 2 )
+
+[node name="Corn" instance=ExtResource( 1 )]
+transform = Transform( 0.909326, 0, 0.525, 0, 1.05, 0, -0.525, 0, 0.909326, 0, 0, 0 )
+
+[node name="2D" type="Spatial" parent="." index="0"]
+visible = false
+
+[node name="2dstalk01" type="MeshInstance" parent="2D" index="0"]
+transform = Transform( 0.972306, 0, -0.233717, 0, 1, 0, 0.233717, 0, 0.972306, 0, 1.9, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="2dstalk02" type="MeshInstance" parent="2D" index="1"]
+transform = Transform( 0.652113, 0, 0.758125, 0, 1, 0, -0.758125, 0, 0.652113, 0.0641119, 1.9, 0.698935 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="2dstalk03" type="MeshInstance" parent="2D" index="2"]
+transform = Transform( -0.560944, 0, 0.827857, 0, 1, 0, -0.827857, 0, -0.560944, -1.01619, 1.9, 0.292571 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="2dstalk04" type="MeshInstance" parent="2D" index="3"]
+transform = Transform( -0.868651, 0, -0.495429, 0, 1, 0, 0.495429, 0, -0.868651, -0.404428, 1.9, -0.661607 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="2dstalk05" type="MeshInstance" parent="2D" index="4"]
+transform = Transform( 0.339034, 0, -0.940776, 0, 1, 0, 0.940776, 0, 0.339034, 0.827089, 1.9, -0.370884 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="stalk01001" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="stalk01003" parent="." index="3"]
+transform = Transform( -0.725228, 0, -0.688509, 0, 0.85, 0, 0.688509, 0, -0.725228, 0.495655, 0, 0.464392 )
+
+[node name="stalk01004" parent="." index="4"]
+transform = Transform( 0.579364, 0, -0.815069, 0, 0.95, 0, 0.815069, 0, 0.579364, 0.526017, 0, -0.413532 )

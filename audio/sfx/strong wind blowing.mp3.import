@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/strong wind blowing.mp3-c4f651af7b14b8e724731041195fe1ae.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/strong wind blowing.mp3"
+dest_files=[ "res://.import/strong wind blowing.mp3-c4f651af7b14b8e724731041195fe1ae.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
