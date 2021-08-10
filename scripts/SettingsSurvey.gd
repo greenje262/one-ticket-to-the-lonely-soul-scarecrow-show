@@ -17,6 +17,7 @@ onready var bus_sfx = AudioServer.get_bus_index("SFX")
 onready var bus_ping = AudioServer.get_bus_index("Ping")
 
 signal game_time
+signal keybinds_time
 
 func _ready():
 	dialogue_volume.value = db2linear(AudioServer.get_bus_volume_db(bus_dialogue))
@@ -31,13 +32,10 @@ func _on_Button_pressed():
 #volume change connections
 func _on_DialogueSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(bus_dialogue, linear2db(dialogue_volume.value))
-
 func _on_MusicSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(bus_music, linear2db(music_volume.value))
-
 func _on_HSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(bus_sfx, linear2db(sfx_volume.value))
-
 func _on_PingSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(bus_ping, linear2db(ping_volume.value))
 
@@ -53,10 +51,12 @@ func _on_PingerBox_toggled(button_pressed):
 #disable obsolete settings when unchecked
 func _on_SubtitlesBox_toggled(button_pressed):
 	if !subtitles.pressed:
-		print("whaddafuck")
 		dynamic_text.pressed = false
 		dynamic_text.disabled = true
 	elif subtitles.pressed:
-		print("help")
 		dynamic_text.pressed = true
 		dynamic_text.disabled = false
+
+#flip paper to do rebinds
+func _on_Rebinds_pressed():
+	emit_signal("keybinds_time")

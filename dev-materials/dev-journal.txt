@@ -111,3 +111,10 @@ UNTITLED PROJECT 5/21/2021 DEV JOURNAL
     I think the thing that will cause the biggest holdup is making the cinematics for the rants. I have a lot of great ideas, but there's so much to balance when trying to nail down the tone. I have to make sure the writing, the voice acting, and everything in the cinematic matches the tone I'm trying to portray. It's a lot of pressure, and I'm afraid that I'm going to hate it by the end. Well, whatever. As long as it isn't objectively terrible, I guess I'll be fine with it.
 
     Games never turn out the way you want them to, I suppose. I'm gonna build some of the scrows this week. Hopefully seeing them in Godot will get my fire going.
+
+8/3/2021
+    Progress has still been slow. I got all the settings hooked up, including the keybindings, and I 'finished' the script, so that is good, but there's still a ton to do. I'm feeling a little fatigue, I think. The scarecrow game is interesting, for sure, but I think I want to work on something that's more "game". Maybe not, I dunno. I think I'm also just in the rut of doing not-exciting stuff. I bet building the scrows will be fun as hell.
+
+    Anyhow, again, not much to say. Just haven't updated in a while and wanted to put something on the page. Oh! No, there was one other thing I wanted to mention. I've been looking into voice modulation software, and haven't found anything satisfying. I think Audacity will be the way to go, as crude a method as that is. We'll see. Between changing my actual voice and changing it in Audacity, I think I can get 10 different voices out of it. Fingers crossed.
+
+    I did also come across some great accessibility guides to get some pointers, so I'm looking forward to leafing through those for some insight.

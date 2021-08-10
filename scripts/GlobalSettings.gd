@@ -7,9 +7,11 @@ var show_subtitles = true
 var show_dynamic_text = true
 var show_bg_video = true
 
+#initialize variables
 func _ready():
-	settings = get_node("/root/Cornfield/Player/SettingsPage/ViewportContainer/Viewport/SettingsSurvey")
+	settings = get_node("/root/Cornfield/Player/SettingsPage/ViewportContainer/ViewportSettings/SettingsSurvey")
 
+#set setting booleans
 func _process(delta):
 	if settings.pinger.pressed:
 		show_pinger = true

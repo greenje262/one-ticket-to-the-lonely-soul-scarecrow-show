@@ -8,8 +8,11 @@ onready var pinger = $PingPlayer
 onready var dialoguer = $DialoguePlayer
 onready var ray = $RayCast
 onready var survey = $SettingsPage
-onready var survey_page = $SettingsPage/ViewportContainer/Viewport/SettingsSurvey
-onready var volume_setting = $SettingsPage/ViewportContainer/Viewport/SettingsSurvey/SettingsBox/VolumeDialogue/HSlider
+onready var survey_page = $SettingsPage/ViewportContainer/ViewportSettings/SettingsSurvey
+onready var volume_setting = $SettingsPage/ViewportContainer/ViewportSettings/SettingsSurvey/SettingsBox/VolumeDialogue/HSlider
+onready var keybind_page = $SettingsPage/ViewportContainer/ViewportKeybinds/Keybinds
+onready var menu_up = $SettingsPage/ViewportContainer/ViewportKeybinds/Keybinds/SettingsBox/LeftColumn/ui_up/Button
+onready var survey_mat = survey.get_surface_material(0)
 
 onready var ind_u = $UIndicator
 onready var ind_l = $LIndicator
@@ -38,9 +41,12 @@ var ind_full = preload("res://graphics/ui/indicator-full.png")
 signal node_update
 
 func _ready():
+	print(survey_mat.albedo_texture.viewport_path)
 	stored_rot = rotation_degrees
 	get_node("/root/Cornfield").connect("the_end", self, "endgame")
 	survey_page.connect("game_time", self, "settings_done")
+	survey_page.connect("keybinds_time", self, "flip_one")
+	keybind_page.connect("flip_back", self, "flip_two")
 
 #handle inputs, adjust settings, find facing direction, handle yes/no options
 func _physics_process(delta):
@@ -135,6 +141,16 @@ func _physics_process(delta):
 		ind_l.show()
 		ind_d.show()
 		ind_r.show()
+
+#flip paper
+func flip_one():
+	survey_mat.albedo_texture.viewport_path = "SettingsPage/ViewportContainer/ViewportKeybinds"
+	yield(get_tree(), "idle_frame")
+	menu_up.grab_focus()
+func flip_two():
+	survey_mat.albedo_texture.viewport_path = "SettingsPage/ViewportContainer/ViewportSettings"
+	yield(get_tree(), "idle_frame")
+	volume_setting.grab_focus()
 
 #put away settings page and begin the game
 func settings_done():
