@@ -101,6 +101,7 @@ func dialogue_advance():
 	if GlobalSettings.show_subtitles:
 		player.add_child(words)
 		
+		words.rect_scale = Vector2(1, 1)
 		words.set_visible_characters(0)
 		words.rect_size = Vector2(current_dialogue[page].x_size, current_dialogue[page].y_size)
 		words.rect_position = Vector2(current_dialogue[page].x_pos, current_dialogue[page].y_pos)
@@ -119,22 +120,14 @@ func dialogue_advance():
 			if current_dialogue[page].signal[i - 1] == "choice":
 				choice = true
 			
-			if GlobalSettings.show_subtitles && GlobalSettings.show_dynamic_text:
+			if GlobalSettings.show_subtitles:
 				match current_dialogue[page].signal[i - 1]:
-					"blue_text":
-						words.modulate = Color(0, 0, 1, 1)
-					"red_text":
+					"redden":
 						words.modulate = Color(1, 0, 0, 1)
-					"green_text":
-						words.modulate = Color(0, 1, 0, 1)
+					"whiten":
+						words.modulate = Color(1, 1, 1, 1)
 					"smallen":
 						words.rect_scale = Vector2(0.5, 0.5)
-					"embiggen":
-						words.rect_scale = Vector2(2, 2)
-			
-			if GlobalSettings.show_bg_video:
-				#another match statement goes here
-				pass
 
 #halt and reset dialogue state on room leave
 func dialogue_end():

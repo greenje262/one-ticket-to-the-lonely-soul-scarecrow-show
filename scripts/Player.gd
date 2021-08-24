@@ -10,6 +10,9 @@ onready var ray = $RayCast
 onready var survey = $SettingsPage
 onready var survey_page = $SettingsPage/ViewportContainer/ViewportSettings/SettingsSurvey
 onready var volume_setting = $SettingsPage/ViewportContainer/ViewportSettings/SettingsSurvey/SettingsBox/VolumeDialogue/HSlider
+onready var sfx_setting = $SettingsPage/ViewportContainer/ViewportSettings/SettingsSurvey/SettingsBox/VolumeSFX/HSlider
+onready var music_setting = $SettingsPage/ViewportContainer/ViewportSettings/SettingsSurvey/SettingsBox/VolumeMusic/HSlider
+onready var jeff_setting = $SettingsPage/ViewportContainer/ViewportSettings/SettingsSurvey/SettingsBox/VolumeJeff/HSlider
 onready var keybind_page = $SettingsPage/ViewportContainer/ViewportKeybinds/Keybinds
 onready var menu_up = $SettingsPage/ViewportContainer/ViewportKeybinds/Keybinds/SettingsBox/LeftColumn/ui_up/Button
 onready var survey_mat = survey.get_surface_material(0)
@@ -37,6 +40,7 @@ var survey_time = false
 var node_match
 var ind_empty = preload("res://graphics/ui/indicator-empty.png")
 var ind_full = preload("res://graphics/ui/indicator-full.png")
+var old_volume = []
 
 signal node_update
 
@@ -114,11 +118,16 @@ func _physics_process(delta):
 	
 	if ray.is_colliding():
 		coll = ray.get_collider()
-		in_room = true
 		if coll != null:
-			look_tweak(coll.translation - translation)
-	else:
-		in_room = false
+			if coll.is_in_group("rooms"):
+				in_room = true
+				if coll != null:
+					look_tweak(coll.translation - translation)
+			else:
+				in_room = false
+			if coll.get_parent().is_in_group("triggers") && Triggers.chambered == false:
+				yield(tween, "tween_all_completed")
+				Triggers.check_trigger()
 	
 	if Dialogue.choice:
 		yield(Dialogue, "done_spelling")
@@ -186,7 +195,7 @@ func look_tweak(looker):
 		"east":
 			look_rot = rotation_degrees - Vector3(0, spin_rot, 0) + Vector3(0, 90, 0)
 
-#move forward based on next node
+#move forward based on next node, and play fragment if chambered
 func advance():
 	match dir:
 		"north":
@@ -205,6 +214,12 @@ func advance():
 			if node_match.E != null:
 				tween.interpolate_property(self, "translation", translation, node_match.E, node_match.speedE, Tween.TRANS_LINEAR)
 				tween.start()
+	
+	if Triggers.jeffer.is_playing() == false && Triggers.chambered == true:
+		randomize()
+		var delay = rand_range(0.5, 1.0)
+		yield(get_tree().create_timer(delay), "timeout")
+		Triggers.play_fragment()
 
 #tell players which directions are available
 func ping():
@@ -212,6 +227,13 @@ func ping():
 	var loc_l
 	var loc_d
 	var loc_r
+	
+	var u_done = false
+	var l_done = false
+	var d_done = false
+	var r_done = false
+	
+	lower_volume()
 	
 	match dir:
 		"east":
@@ -236,7 +258,7 @@ func ping():
 			loc_r = node_match.W
 	
 	if loc_u == null:
-		pass
+		u_done = true
 	else:
 		pinger.translation = translation + Vector3(0, 0, -10)
 		pinger.pitch_scale = 1.25
@@ -244,18 +266,20 @@ func ping():
 		
 		ind_u.texture = ind_full
 		yield(get_tree().create_timer(0.5), "timeout")
+		u_done = true
 		ind_u.texture = ind_empty
 	if loc_l == null:
-		pass
+		l_done = true
 	else:
 		pinger.translation = translation + Vector3(-10, 0, 0)
 		ping_play()
 		
 		ind_l.texture = ind_full
 		yield(get_tree().create_timer(0.5), "timeout")
+		l_done = true
 		ind_l.texture = ind_empty
 	if loc_d == null:
-		pass
+		d_done = true
 	else:
 		pinger.translation = translation + Vector3(0, 0, 10)
 		pinger.pitch_scale = 0.75
@@ -263,16 +287,21 @@ func ping():
 		
 		ind_d.texture = ind_full
 		yield(get_tree().create_timer(0.5), "timeout")
+		d_done = true
 		ind_d.texture = ind_empty
 	if loc_r == null:
-		pass
+		r_done = true
 	else:
 		pinger.translation = translation + Vector3(10, 0, 0)
 		ping_play()
 		
 		ind_r.texture = ind_full
 		yield(get_tree().create_timer(0.5), "timeout")
+		r_done = true
 		ind_r.texture = ind_empty
+	
+	if u_done && l_done && d_done && r_done:
+		raise_volume()
 
 #avoid 360 no-scopes when using look feature
 func normalize_rot():
@@ -287,6 +316,25 @@ func ping_play():
 	yield(get_tree().create_timer(pinger.stream.get_length()), "timeout")
 	pinger.stop()
 	pinger.pitch_scale = 1
+
+#lower volume when ping is playing
+func lower_volume():
+	old_volume = [volume_setting.value, sfx_setting.value, music_setting.value, jeff_setting.value]
+	if volume_setting.value > 0.2:
+		volume_setting.value = 0.2
+	if sfx_setting.value > 0.2:
+		sfx_setting.value = 0.2
+	if music_setting.value > 0.2:
+		music_setting.value = 0.2
+	if jeff_setting.value > 0.2:
+		jeff_setting.value = 0.2
+
+#raise volume after pinger completion
+func raise_volume():
+	volume_setting.value = old_volume[0]
+	sfx_setting.value = old_volume[1]
+	music_setting.value = old_volume[2]
+	jeff_setting.value = old_volume[3]
 
 #regularly update player position in cornfield
 #connects to cornfield script

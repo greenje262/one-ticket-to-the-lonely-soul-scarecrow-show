@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://graphics/world/dirt-full.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Corn.tscn" type="PackedScene" id=2]
@@ -19,6 +19,10 @@
 [ext_resource path="res://audio/screams/scream04.mp3" type="AudioStream" id=17]
 [ext_resource path="res://audio/screams/scream10.mp3" type="AudioStream" id=18]
 [ext_resource path="res://scenes/Fog.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/DialogueTrigger.tscn" type="PackedScene" id=20]
+[ext_resource path="res://graphics/scrows/scrow04.png" type="Texture" id=21]
+[ext_resource path="res://graphics/scrows/scrow05.png" type="Texture" id=22]
+[ext_resource path="res://graphics/scrows/scrow06.png" type="Texture" id=23]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.670588, 0.670588, 0.670588, 1 )
@@ -1532,7 +1536,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 17 )
 
 [node name="Areas" type="Spatial" parent="."]
 
-[node name="Area01" type="Area" parent="Areas"]
+[node name="Area01" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 11 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1551,7 +1557,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
 texture = ExtResource( 6 )
 
-[node name="Area02" type="Area" parent="Areas"]
+[node name="Area02" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1571,7 +1579,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
 texture = ExtResource( 5 )
 
-[node name="Area03" type="Area" parent="Areas"]
+[node name="Area03" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1591,7 +1601,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
 texture = ExtResource( 7 )
 
-[node name="Area04" type="Area" parent="Areas"]
+[node name="Area04" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1609,9 +1621,11 @@ bus = "Music"
 [node name="Scrow04" type="Sprite3D" parent="Areas/Area04"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 21 )
 
-[node name="Area05" type="Area" parent="Areas"]
+[node name="Area05" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -11 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1629,9 +1643,11 @@ bus = "Music"
 [node name="Scrow05" type="Sprite3D" parent="Areas/Area05"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 22 )
 
-[node name="Area06" type="Area" parent="Areas"]
+[node name="Area06" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -13 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1649,9 +1665,11 @@ bus = "Music"
 [node name="Scrow06" type="Sprite3D" parent="Areas/Area06"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 23 )
 
-[node name="Area07" type="Area" parent="Areas"]
+[node name="Area07" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 9 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1669,9 +1687,11 @@ bus = "Music"
 [node name="Scrow07" type="Sprite3D" parent="Areas/Area07"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 21 )
 
-[node name="Area08" type="Area" parent="Areas"]
+[node name="Area08" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -7 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1691,7 +1711,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
 texture = ExtResource( 5 )
 
-[node name="Area09" type="Area" parent="Areas"]
+[node name="Area09" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 4 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1709,9 +1731,11 @@ bus = "Music"
 [node name="Scrow09" type="Sprite3D" parent="Areas/Area09"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 22 )
 
-[node name="Area10" type="Area" parent="Areas"]
+[node name="Area10" type="Area" parent="Areas" groups=[
+"rooms",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 13 )
 gravity_vec = Vector3( 0, 0, 0 )
 gravity = 0.0
@@ -1731,6 +1755,113 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 billboard = 1
 texture = ExtResource( 6 )
 
+[node name="Triggers" type="Spatial" parent="."]
+
+[node name="Trigger01" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 14 )
+
+[node name="Trigger02" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 9 )
+
+[node name="Trigger03" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 9 )
+
+[node name="Trigger04" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1 )
+
+[node name="Trigger05" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -7 )
+
+[node name="Trigger06" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 7 )
+
+[node name="Trigger07" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -7 )
+
+[node name="Trigger08" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -3 )
+
+[node name="Trigger09" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+
+[node name="Trigger10" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -9 )
+
+[node name="Trigger11" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2 )
+
+[node name="Trigger12" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5 )
+
+[node name="Trigger13" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3 )
+
+[node name="Trigger14" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -9 )
+
+[node name="Trigger15" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1 )
+
+[node name="Trigger16" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -13 )
+
+[node name="Trigger17" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -6 )
+
+[node name="Trigger18" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 6 )
+
+[node name="Trigger19" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 10 )
+
+[node name="Trigger20" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17 )
+
+[node name="Trigger21" parent="Triggers" groups=[
+"triggers",
+] instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 13 )
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 17 )
 
@@ -1741,3 +1872,6 @@ autoplay = true
 bus = "SFX"
 
 [node name="Fog" parent="." instance=ExtResource( 19 )]
+
+[node name="JeffVoice" type="AudioStreamPlayer" parent="."]
+bus = "Jeff"
