@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/SettingsSurvey.gd" type="Script" id=1]
+[ext_resource path="res://fonts/SplendidB.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+extra_spacing_top = -4
+extra_spacing_bottom = -4
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+font_data = ExtResource( 2 )
 
 [node name="SettingsSurvey" type="Control"]
 margin_right = 464.0
@@ -18,12 +37,17 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
+margin_top = 25.0
 margin_right = 464.0
-margin_bottom = 50.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "PRE-MAZE SURVEY"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SettingsBox" type="Control" parent="."]
 anchor_left = 0.5
@@ -31,7 +55,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -207.0
-margin_top = -550.0
+margin_top = -483.0
 margin_right = 208.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -50,8 +74,10 @@ anchor_bottom = 0.5
 margin_top = -25.0
 margin_right = 100.0
 margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "DIALOGUE VOLUME"
+align = 1
 valign = 1
 autowrap = true
 __meta__ = {
@@ -63,8 +89,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -315.0
+margin_left = -285.0
 margin_top = -25.0
+margin_right = -10.0
 margin_bottom = 25.0
 max_value = 1.0
 step = 0.05
@@ -89,8 +116,10 @@ anchor_bottom = 0.5
 margin_top = -25.0
 margin_right = 100.0
 margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MUSIC VOLUME"
+align = 1
 valign = 1
 autowrap = true
 __meta__ = {
@@ -102,8 +131,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -315.0
+margin_left = -285.0
 margin_top = -25.0
+margin_right = -10.0
 margin_bottom = 25.0
 max_value = 1.0
 step = 0.05
@@ -125,8 +155,10 @@ anchor_bottom = 0.5
 margin_top = -25.0
 margin_right = 100.0
 margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SFX VOLUME"
+align = 1
 valign = 1
 autowrap = true
 __meta__ = {
@@ -138,8 +170,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -315.0
+margin_left = -285.0
 margin_top = -25.0
+margin_right = -10.0
 margin_bottom = 25.0
 max_value = 1.0
 step = 0.05
@@ -161,8 +194,10 @@ anchor_bottom = 0.5
 margin_top = -25.0
 margin_right = 100.0
 margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "JEFF VOLUME"
+align = 1
 valign = 1
 autowrap = true
 __meta__ = {
@@ -174,8 +209,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -315.0
+margin_left = -285.0
 margin_top = -25.0
+margin_right = -10.0
 margin_bottom = 25.0
 max_value = 1.0
 step = 0.05
@@ -200,8 +236,10 @@ anchor_bottom = 0.5
 margin_top = -25.0
 margin_right = 100.0
 margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "PING THING"
+text = "MAZE PINGER"
+align = 1
 valign = 1
 autowrap = true
 __meta__ = {
@@ -213,7 +251,7 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -315.0
+margin_left = -275.0
 margin_top = -25.0
 margin_bottom = 25.0
 align = 1
@@ -254,8 +292,10 @@ anchor_bottom = 0.5
 margin_top = -25.0
 margin_right = 100.0
 margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SUBTITLES"
+align = 1
 valign = 1
 autowrap = true
 __meta__ = {
@@ -267,7 +307,7 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -315.0
+margin_left = -275.0
 margin_top = -25.0
 margin_bottom = 25.0
 pressed = true
@@ -277,19 +317,23 @@ __meta__ = {
 }
 
 [node name="KeyRebind" type="Control" parent="SettingsBox"]
-margin_top = 300.0
+margin_top = 325.0
 margin_right = 415.0
-margin_bottom = 350.0
+margin_bottom = 375.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="SettingsBox/KeyRebind"]
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
+margin_left = -72.0
 margin_top = -25.0
-margin_right = 100.0
+margin_right = 72.0
 margin_bottom = 25.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 action_mode = 0
 text = "REBIND KEYS"
@@ -299,9 +343,9 @@ __meta__ = {
 }
 
 [node name="DoneButton" type="Control" parent="SettingsBox"]
-margin_top = 500.0
+margin_top = 400.0
 margin_right = 415.0
-margin_bottom = 550.0
+margin_bottom = 450.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -315,6 +359,7 @@ margin_left = -50.0
 margin_top = -25.0
 margin_right = 50.0
 margin_bottom = 25.0
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 action_mode = 0
 text = "DONE"

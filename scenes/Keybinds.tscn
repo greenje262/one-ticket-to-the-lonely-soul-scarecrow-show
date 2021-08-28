@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Keybinds.gd" type="Script" id=1]
+[ext_resource path="res://fonts/SplendidB.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 2 )
 
 [node name="Keybinds" type="Control"]
 margin_right = 464.0
@@ -18,21 +31,26 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
+margin_top = 25.0
 margin_right = 464.0
-margin_bottom = 50.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "REBIND KEYS"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SettingsBox" type="Control" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -200.0
+margin_left = -211.0
 margin_top = -550.0
-margin_right = 200.0
+margin_right = 175.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -41,13 +59,13 @@ __meta__ = {
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -500.0
-margin_right = 175.0
+margin_right = 150.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ui_up" type="Control" parent="SettingsBox/LeftColumn"]
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 50.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -56,9 +74,10 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/LeftColumn/ui_up"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 61.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 70.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MENU UP"
 __meta__ = {
@@ -70,8 +89,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -79,7 +99,7 @@ __meta__ = {
 
 [node name="ui_left" type="Control" parent="SettingsBox/LeftColumn"]
 margin_top = 50.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,24 +108,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/LeftColumn/ui_left"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 71.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 90.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MENU LEFT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/LeftColumn/ui_left"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="move_forward" type="Control" parent="SettingsBox/LeftColumn"]
 margin_top = 100.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 150.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -114,24 +139,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/LeftColumn/move_forward"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 108.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 70.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MOVE FORWARD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/LeftColumn/move_forward"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="turn_left" type="Control" parent="SettingsBox/LeftColumn"]
 margin_top = 150.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 200.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -140,24 +170,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/LeftColumn/turn_left"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 67.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 90.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "TURN LEFT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/LeftColumn/turn_left"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="turn_right" type="Control" parent="SettingsBox/LeftColumn"]
 margin_top = 200.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 250.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -166,24 +201,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/LeftColumn/turn_right"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 79.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 100.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "TURN RIGHT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/LeftColumn/turn_right"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="look" type="Control" parent="SettingsBox/LeftColumn"]
 margin_top = 250.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 300.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -192,24 +232,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/LeftColumn/look"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 57.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 70.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "LOOK AT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/LeftColumn/look"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="yes" type="Control" parent="SettingsBox/LeftColumn"]
 margin_top = 300.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 350.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -218,24 +263,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/LeftColumn/yes"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 48.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 70.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SAY YES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/LeftColumn/yes"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="settings" type="Control" parent="SettingsBox/LeftColumn"]
 margin_top = 350.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 400.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -244,34 +294,43 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/LeftColumn/settings"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 100.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 80.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "OPEN SETTINGS"
+text = "SETTINGS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/LeftColumn/settings"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RightColumn" type="Control" parent="SettingsBox"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -175.0
+margin_left = -161.0
 margin_top = -500.0
+margin_right = -11.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ui_down" type="Control" parent="SettingsBox/RightColumn"]
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 50.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -280,24 +339,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/RightColumn/ui_down"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 87.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 90.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MENU DOWN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/RightColumn/ui_down"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="ui_right" type="Control" parent="SettingsBox/RightColumn"]
 margin_top = 50.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -306,24 +370,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/RightColumn/ui_right"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 83.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 100.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MENU RIGHT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/RightColumn/ui_right"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="ui_accept" type="Control" parent="SettingsBox/RightColumn"]
 margin_top = 100.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 150.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -332,24 +401,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/RightColumn/ui_accept"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 104.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 120.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MENU CONFIRM"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/RightColumn/ui_accept"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="quit" type="Control" parent="SettingsBox/RightColumn"]
 margin_top = 150.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 200.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -358,24 +432,32 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/RightColumn/quit"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 40.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 70.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/RightColumn/quit"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ping" type="Control" parent="SettingsBox/RightColumn"]
 margin_top = 200.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 250.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -384,24 +466,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/RightColumn/ping"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 70.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 90.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "PING AREA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/RightColumn/ping"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="talk" type="Control" parent="SettingsBox/RightColumn"]
 margin_top = 250.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 300.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -410,24 +497,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/RightColumn/talk"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 40.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 70.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "TALK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/RightColumn/talk"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="no" type="Control" parent="SettingsBox/RightColumn"]
 margin_top = 300.0
-margin_right = 175.0
+margin_right = 150.0
 margin_bottom = 350.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -436,19 +528,24 @@ __meta__ = {
 [node name="Label" type="Label" parent="SettingsBox/RightColumn/no"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_right = 48.0
-margin_bottom = 7.0
+margin_top = -10.0
+margin_right = 70.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SAY NO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="SettingsBox/RightColumn/no"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -12.0
+margin_left = -25.0
 margin_top = -10.0
+margin_right = -13.0
 margin_bottom = 10.0
 
 [node name="BackButton" type="Control" parent="SettingsBox"]
@@ -457,8 +554,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -207.5
-margin_top = -50.0
+margin_top = -75.0
 margin_right = 207.5
+margin_bottom = -25.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -472,6 +570,7 @@ margin_left = -50.0
 margin_top = -25.0
 margin_right = 50.0
 margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 action_mode = 0
 text = "BACK"

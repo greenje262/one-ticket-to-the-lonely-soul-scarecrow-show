@@ -27,6 +27,8 @@ onready var noer = $WordBox/YesNoBox/No
 
 onready var title = $WordBox/TitleBox
 onready var end = $WordBox/EndBox
+onready var controls = $WordBox/GameControls
+onready var credits = $WordBox/CreditsPage
 
 var state = "title"
 var counter = 1001
@@ -57,6 +59,14 @@ func _physics_process(delta):
 	#the 'play again' process is wrong somehow, that needs to be fixed
 	if state == "title" || state == "end":
 		if !tween.is_active():
+			if Input.is_action_pressed("turn_left"):
+				if state == "title":
+					controls.visible = true
+				elif state == "end":
+					credits.visible = true
+			else:
+				credits.visible = false
+				controls.visible = false
 			if Input.is_action_just_pressed("ping"):
 				tween.interpolate_property(self, "translation", Vector3(0, 10, 17), Vector3(0, 0, 17), 2, Tween.EASE_OUT)
 				tween.start()
@@ -64,6 +74,10 @@ func _physics_process(delta):
 					tween2.interpolate_property(title, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3.5, Tween.TRANS_EXPO)
 					tween2.start()
 				elif state == "end":
+					state = "title"
+					counter = 1001
+					DialogueVault.reset()
+					rotation_degrees = Vector3(0, 0, 0)
 					tween2.interpolate_property(end, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3.5, Tween.TRANS_EXPO)
 					tween2.start()
 	elif state == "settings" && !survey_time:
@@ -169,6 +183,7 @@ func settings_done():
 		tween2.interpolate_property(survey, "translation", Vector3(0, 0.8, -0.4), Vector3(2, 0.8, -0.4), 1, Tween.EASE_OUT)
 		tween2.start()
 		yield(tween2, "tween_all_completed")
+		survey_time = false
 		state = "game"
 
 #update look direction after every input
