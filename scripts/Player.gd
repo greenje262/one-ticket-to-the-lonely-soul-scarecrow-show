@@ -232,7 +232,7 @@ func advance():
 	
 	if Triggers.jeffer.is_playing() == false && Triggers.chambered == true:
 		randomize()
-		var delay = rand_range(0.5, 1.0)
+		var delay = rand_range(0.5, 2.0) #used to be 0.5 - 1.0, it might break if it's this high, I dunno
 		yield(get_tree().create_timer(delay), "timeout")
 		Triggers.play_fragment()
 

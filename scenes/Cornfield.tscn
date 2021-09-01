@@ -62,6 +62,7 @@ environment = SubResource( 2 )
 
 [node name="Floor" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
+visible = false
 
 [node name="FullDirtFloor" type="Sprite3D" parent="Floor"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
@@ -1780,7 +1781,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1 )
 [node name="Trigger05" parent="Triggers" groups=[
 "triggers",
 ] instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -10 )
 
 [node name="Trigger06" parent="Triggers" groups=[
 "triggers",
@@ -1810,7 +1811,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -9 )
 [node name="Trigger11" parent="Triggers" groups=[
 "triggers",
 ] instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -12 )
 
 [node name="Trigger12" parent="Triggers" groups=[
 "triggers",
@@ -1872,6 +1873,7 @@ autoplay = true
 bus = "SFX"
 
 [node name="Fog" parent="." instance=ExtResource( 19 )]
+visible = false
 
 [node name="JeffVoice" type="AudioStreamPlayer" parent="."]
 bus = "Jeff"
