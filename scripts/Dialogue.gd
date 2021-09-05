@@ -62,6 +62,7 @@ func _input(event):
 			if GlobalSettings.show_subtitles:
 				if words.get_visible_characters() > words.get_total_character_count():
 					emit_signal("done_spelling")
+					print(choice)
 					if !choice:
 						if page < current_dialogue.size() - 1:
 							page += 1

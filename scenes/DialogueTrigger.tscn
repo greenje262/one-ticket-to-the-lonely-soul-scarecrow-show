@@ -20,5 +20,6 @@ gravity = 0.0
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 3 )
 material/0 = null

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/dirt.png-a346b39517e539059d0201d80ed34cde.s3tc.stex"
-path.etc2="res://.import/dirt.png-a346b39517e539059d0201d80ed34cde.etc2.stex"
+path.s3tc="res://.import/dirt.png-e2087d79da947ef64a0e8f329f91ac77.s3tc.stex"
+path.etc2="res://.import/dirt.png-e2087d79da947ef64a0e8f329f91ac77.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://graphics/world/dirt.png"
-dest_files=[ "res://.import/dirt.png-a346b39517e539059d0201d80ed34cde.s3tc.stex", "res://.import/dirt.png-a346b39517e539059d0201d80ed34cde.etc2.stex" ]
+source_file="res://dev-materials/file-cleanup/dirt.png"
+dest_files=[ "res://.import/dirt.png-e2087d79da947ef64a0e8f329f91ac77.s3tc.stex", "res://.import/dirt.png-e2087d79da947ef64a0e8f329f91ac77.etc2.stex" ]
 
 [params]
 

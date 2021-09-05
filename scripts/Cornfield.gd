@@ -593,8 +593,8 @@ func check_node():
 			player.node_match = {
 				"N": null, "speedN": 0,
 				"W": node064.translation, "speedW": 1.125,
-				"S": node066.translation, "speedS": 1.125,
-				"E": node055.translation, "speedE": 1.5
+				"S": node055.translation, "speedS": 1.5,
+				"E": node066.translation, "speedE": 1.125
 				}
 		node066.translation:
 			player.node_match = {

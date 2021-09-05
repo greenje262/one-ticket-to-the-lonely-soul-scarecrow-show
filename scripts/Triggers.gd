@@ -34,8 +34,14 @@ var pos15; var pos16; var pos17; var pos18; var pos19; var pos20; var pos21
 var chambered = false
 
 #sound file strings go in these
-var vo_array01 = []
-var vo_array02 = []
+var vo_array00 = ["clip-02-final.mp3"]
+var vo_array01 = ["clip-03-final.mp3"]
+var vo_array02 = ["clip-04-final.mp3", "clip-05-final.mp3", "clip-07-final.mp3", "clip-09-final.mp3", "clip-23-final.mp3"]
+var vo_array03 = ["clip-06-final.mp3", "clip-08-final.mp3", "clip-12-final.mp3", "clip-25-final.mp3"]
+var vo_array04 = ["clip-10-final.mp3", "clip-11-final.mp3", "clip-13-final.mp3", "clip-16-final.mp3", "clip-17-final.mp3"]
+var vo_array05 = ["clip-14-final.mp3", "clip-15-final.mp3", "clip-19-final.mp3", "clip-21-final.mp3"]
+var vo_array06 = ["clip-18-final.mp3", "clip-20-final.mp3", "clip-22-final.mp3", "clip-24-final.mp3"]
+var vo_array07 = ["clip-26-final.mp3"]
 
 func _ready():
 	pos01 = trigger01.translation; pos02 = trigger02.translation
@@ -52,83 +58,88 @@ func _ready():
 
 #choose possible fragments based on player location, and remove dialogue trigger
 func check_trigger():
-	chambered = true
-	match player.translation:
-		pos01:
-			pick_from(vo_array01)
-			trigger01.queue_free()
-		pos02:
-			pick_from(vo_array01)
-			trigger02.queue_free()
-		pos03:
-			pick_from(vo_array01)
-			trigger03.queue_free()
-		pos04:
-			pick_from(vo_array01)
-			trigger04.queue_free()
-		pos05:
-			pick_from(vo_array01)
-			trigger05.queue_free()
-		pos06:
-			pick_from(vo_array01)
-			trigger06.queue_free()
-		pos07:
-			pick_from(vo_array01)
-			trigger07.queue_free()
-		pos08:
-			pick_from(vo_array01)
-			trigger08.queue_free()
-		pos09:
-			pick_from(vo_array01)
-			trigger09.queue_free()
-		pos10:
-			pick_from(vo_array01)
-			trigger10.queue_free()
-		pos11:
-			pick_from(vo_array01)
-			trigger11.queue_free()
-		pos12:
-			pick_from(vo_array01)
-			trigger12.queue_free()
-		pos13:
-			pick_from(vo_array01)
-			trigger13.queue_free()
-		pos14:
-			pick_from(vo_array01)
-			trigger14.queue_free()
-		pos15:
-			pick_from(vo_array01)
-			trigger15.queue_free()
-		pos16:
-			pick_from(vo_array01)
-			trigger16.queue_free()
-		pos17:
-			pick_from(vo_array01)
-			trigger17.queue_free()
-		pos18:
-			pick_from(vo_array01)
-			trigger18.queue_free()
-		pos19:
-			pick_from(vo_array01)
-			trigger19.queue_free()
-		pos20:
-			pick_from(vo_array01)
-			trigger20.queue_free()
-		pos21:
-			pick_from(vo_array01)
-			trigger21.queue_free()
+	if !chambered:
+		chambered = true
+		match player.translation:
+			pos01:
+				pick_from(vo_array01)
+				trigger01.queue_free()
+			pos02:
+				pick_from(vo_array02)
+				trigger02.queue_free()
+			pos03:
+				pick_from(vo_array02)
+				trigger03.queue_free()
+			pos04:
+				pick_from(vo_array06)
+				trigger04.queue_free()
+			pos05:
+				pick_from(vo_array05)
+				trigger05.queue_free()
+			pos06:
+				pick_from(vo_array02)
+				trigger06.queue_free()
+			pos07:
+				pick_from(vo_array04)
+				trigger07.queue_free()
+			pos08:
+				pick_from(vo_array06)
+				trigger08.queue_free()
+			pos09:
+				pick_from(vo_array03)
+				trigger09.queue_free()
+			pos10:
+				pick_from(vo_array05)
+				trigger10.queue_free()
+			pos11:
+				pick_from(vo_array05)
+				trigger11.queue_free()
+			pos12:
+				pick_from(vo_array02)
+				trigger12.queue_free()
+			pos13:
+				pick_from(vo_array03)
+				trigger13.queue_free()
+			pos14:
+				pick_from(vo_array04)
+				trigger14.queue_free()
+			pos15:
+				pick_from(vo_array03)
+				trigger15.queue_free()
+			pos16:
+				pick_from(vo_array04)
+				trigger16.queue_free()
+			pos17:
+				pick_from(vo_array04)
+				trigger17.queue_free()
+			pos18:
+				pick_from(vo_array06)
+				trigger18.queue_free()
+			pos19:
+				pick_from(vo_array06)
+				trigger19.queue_free()
+			pos20:
+				pick_from(vo_array00)
+				trigger20.queue_free()
+			pos21:
+				pick_from(vo_array07)
+				trigger21.queue_free()
+	elif chambered:
+		pass
 
 #choose a random fragment from the array and store it to play on advancing
 func pick_from(array):
-	rng.randomize()
-	#var track = rng.randi_range(0, array.size() - 1)
-	#var file = load("res://audio/" + str(array[track]))
-	var file = load("res://audio/test-audio.mp3")
-	jeffer.stream = file
-	#array.remove(track)
+	if array.size() > 0:
+		rng.randomize()
+		var track = rng.randi_range(0, array.size() - 1)
+		var file = load("res://audio/voiceover/" + str(array[track]))
+		jeffer.stream = file
+		array.remove(track)
+	else:
+		chambered = false
 
 #play the fragment, and set chambered to false to prepare for next trigger
 func play_fragment():
-	#jeffer.play()
+	jeffer.play()
 	yield(jeffer, "finished")
 	chambered = false

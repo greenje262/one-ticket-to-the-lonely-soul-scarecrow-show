@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/cornstalk2D.png-5fb0164739ec8587036090b4baeb5153.s3tc.stex"
-path.etc2="res://.import/cornstalk2D.png-5fb0164739ec8587036090b4baeb5153.etc2.stex"
+path.s3tc="res://.import/cornstalk2D.png-c0aba461c9d7d6de2af2aa9aada3de70.s3tc.stex"
+path.etc2="res://.import/cornstalk2D.png-c0aba461c9d7d6de2af2aa9aada3de70.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://graphics/world/cornstalk2D.png"
-dest_files=[ "res://.import/cornstalk2D.png-5fb0164739ec8587036090b4baeb5153.s3tc.stex", "res://.import/cornstalk2D.png-5fb0164739ec8587036090b4baeb5153.etc2.stex" ]
+source_file="res://dev-materials/file-cleanup/cornstalk2D.png"
+dest_files=[ "res://.import/cornstalk2D.png-c0aba461c9d7d6de2af2aa9aada3de70.s3tc.stex", "res://.import/cornstalk2D.png-c0aba461c9d7d6de2af2aa9aada3de70.etc2.stex" ]
 
 [params]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/clip-07-final.mp3-0fc316c3027e3ce7d4de8f6d0ea070cc.mp3str"
+
+[deps]
+
+source_file="res://audio/voiceover/clip-07-final.mp3"
+dest_files=[ "res://.import/clip-07-final.mp3-0fc316c3027e3ce7d4de8f6d0ea070cc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
